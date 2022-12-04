@@ -1,6 +1,6 @@
 
 # Covid and Weather Predictor Capstone
-*The world has been shook by the global pandemic caused by the COVID-19 virus. There were periods of time in the last few years where hospitals were overrun with patients and supplies were low. Many areas of the world completely shut down during the peaks of COVID-19 cases causing massive economic disruption. It is estimated that billions of people caught COVID-19 and millions of people died from COVID-19. This will be a predictor system to predict North Carolina's next day/week/month's confirmed COVID-19 cases using previous COVID-19 data and weather data.
+*The world has been shook by the global pandemic caused by the COVID-19 virus. There were periods of time in the last few years where hospitals were overrun with patients and supplies were low. Many areas of the world completely shut down during the peaks of COVID-19 cases causing massive economic disruption. It is estimated that billions of people caught COVID-19 and millions of people died from COVID-19. This will be a predictor system to predict North Carolina's next day/week/month's confirmed COVID-19 cases using previous COVID-19 data and weather data.*
 ## 1. Data
 Data was gathered from primarily two sources. The NOAA provides weather data across thousands of stations in the United States of America. The CSSE provides daily reports for countries and states across the world.
 
@@ -66,7 +66,7 @@ After the data was cleaned and features were created I used pycaret to get a fee
 * Lasso Lars Regression
 * Bayesian Ridge
 
-*Initial LEast Angle Regression Graph*
+*Initial Least Angle Regression Graph*
 ![least_angle_regression_untuned](https://user-images.githubusercontent.com/97986175/205494747-b30371c6-4f00-498e-88bc-181555e7dd8b.png)
 
 *Initial Bayesian Ridge Graph*
