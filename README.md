@@ -41,19 +41,20 @@ The data as presented needed some fairly heavy cleaning. Confirmed cases and dea
 
 * **Solution 2** Fill empty rows using next reported row
     A loop was made that would check how many days in a row were not reported. It would then take the new confirmed and new death cases from the subsequent date and fill the missing rows based on how many days it had been since reporting. 
-    
+  ![correlation_heat_map](https://user-images.githubusercontent.com/97986175/205494943-38458619-87f1-472e-a9e5-872b4a5164c1.png)
+  
 * **Problem 3** Daily data was volatile
     Since COVID-19 cases can jump up and down from day to day when trying to vizualize on a daily basis it was very difficult to gleam anything. 
 
 * **Solution 3** Convert data to a weekly and monthly format
     Data was converted into weekly and monthly format, I then worked with 3 different dataframes during the vast majority of the project. At the end I decided that the weekly format provided the smoothest curve without losing too much information.
-**NOTE FOR COLEMAN - PUT WEEKLY GRAPH HERE**
+![weekly_new_con_new_deaths](https://user-images.githubusercontent.com/97986175/205494964-a111ec06-1024-40f4-9930-58c11b4672f7.png)
 
 ## 5. Create Features to be used in Model Building
 [Preprocessing and Training Data Development Notebook](https://github.com/ColemanZ/Springboard/blob/main/%5BColeman%20Zimmerman%5D%20Covid%20Capstone%20Pre_Processing%20%26%20Training%20Data%20Development.ipynb)
 
 A number of features were created for use in the eventual model building. We already touched on the "New Cases" and "New Deaths" features that were created using the running total of confirmed cases and confirmed deaths. In addition to these features I also created lag features. I first created lags for 24 days for both confirmed cases and confirmed deaths. The idea was that a high number of confirmed cases would be more likely if there had been a high number of confirmed cases leading up to that date. In line with that there should be a higher likelyhood of high deaths when confirmed cases for the last few weeks have been high. I ended up saving confirmed lags for the last 7, 14, and 21 days and then also converting those lags into a weekly and monthly format to fit the other two dataframes being used.
-**NOTE FOR COLEMAN - PUT CONFIRMED LAG HEAT MAP HERE)**
+![image](https://user-images.githubusercontent.com/97986175/205495000-ba8540ef-9c5b-4239-a704-4517df9f8625.png)
 
 ## 6. Build Models
 [Modeling Notebook](https://github.com/ColemanZ/Springboard/blob/main/%5BColeman%20Zimmerman%5D%20Covid%20Capstone%20-%20Modeling.ipynb)
@@ -66,10 +67,10 @@ After the data was cleaned and features were created I used pycaret to get a fee
 * Bayesian Ridge
 
 *Initial LEast Angle Regression Graph*
-**FOR COLEMAN - ADD INITIAL LEAST ANGLE REGRESSION GRAPH
+![least_angle_regression_untuned](https://user-images.githubusercontent.com/97986175/205494747-b30371c6-4f00-498e-88bc-181555e7dd8b.png)
 
 *Initial Bayesian Ridge Graph*
-**FOR COLEMAN - ADD INITIAL BAYESIAN RIDGE GRAPH
+![bay_ridge_untuned](https://user-images.githubusercontent.com/97986175/205494829-2c3d58ec-2d93-496b-bd1c-8dd09b5732cd.png)
 
 ## 7. Tune Models
 After all the models were built they were all tuned. Most of them changed slightly in their RMSE, MSE, or Coefficiant of Determination after tuning, but the Least Angle Regression model saw significant improvement. The Least Angle Regression model performed the best after tuning of the 5 models.
@@ -78,7 +79,7 @@ After all the models were built they were all tuned. Most of them changed slight
 **MSE**:20504.16
 **Coefficiant of Determination**:.85
 *Tuned Least Angle Regression Graph*
-**FOR COLEMAN - ADD TUNED LEAST ANGLE REGRESSION GRAPH**
+![least_angle_regression_tuned](https://user-images.githubusercontent.com/97986175/205494793-18e1ad47-38fc-4561-b3eb-176769e5bf09.png)
 
 ## 9. Ensemble Models
 Once all 5 models were tuned they were combined into an unweighted ensemble method. 
